@@ -5,7 +5,6 @@ import { NoTaskComponent } from './tasks/no-task/no-task.component';
 export const routes: Route[] = [
   {
     path: '',
-    // redirectTo: 'no-tasks',
     component: NoTaskComponent,
   },
   {
