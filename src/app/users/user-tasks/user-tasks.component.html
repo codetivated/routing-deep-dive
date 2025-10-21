@@ -2,9 +2,16 @@
   <header>
     <h2>{{ userName }} Tasks</h2>
     <menu>
-      <a>Add Task</a>
+      <a routerLink="tasks/new">Add Task</a>
     </menu>
   </header>
 
-  <p>Todo ...</p>
+  <router-outlet />
 </section>
+
+<!--
+We are using a relative path
+Relative to the current route /users/:id/tasks
+So the full path becomes /users/:id/tasks/tasks/new
+Relative paths are resolved against the current active route and is part of Angular's routing mechanism
+  -->
