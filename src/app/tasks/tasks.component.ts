@@ -13,8 +13,13 @@ import { RouterLink } from '@angular/router';
 })
 export class TasksComponent {
   userId = input.required<string>();
+  order = input<'asc' | 'desc'>();
+
   private tasksService = inject(TasksService);
   userTasks = computed(() =>
     this.tasksService.allTasks().filter((task) => task.userId === this.userId())
   );
 }
+
+// withComponentInputBinding() from our appConfig file,
+// we can set the value of the query param when the user clicks the asc/desc button
