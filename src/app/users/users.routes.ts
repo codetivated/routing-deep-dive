@@ -1,7 +1,10 @@
 import { Routes } from '@angular/router';
 
 import { TasksComponent, resolveUserTasks } from '../tasks/tasks.component';
-import { NewTaskComponent } from '../tasks/new-task/new-task.component';
+import {
+  canLeaveEditPage,
+  NewTaskComponent,
+} from '../tasks/new-task/new-task.component';
 
 export const routes: Routes = [
   {
@@ -20,7 +23,10 @@ export const routes: Routes = [
   {
     path: 'tasks/new',
     component: NewTaskComponent,
+    canDeactivate: [canLeaveEditPage],
   },
 ];
+
+// used canDeactivate guard to prevent users from accidentally navigating away from the NewTaskComponent when they have unsaved changes
 
 // using runGuardsAndResolvers: 'paramsOrQueryParamsChange' to ensure that the resolver re-runs when either route parameters or query parameters change
