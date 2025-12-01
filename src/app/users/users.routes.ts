@@ -15,7 +15,7 @@ export const routes: Routes = [
   {
     path: 'tasks', // <your-domain>/users/<uid>/tasks
     component: TasksComponent,
-    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
+    runGuardsAndResolvers: 'always',
     resolve: {
       userTasks: resolveUserTasks,
     },
@@ -29,4 +29,4 @@ export const routes: Routes = [
 
 // used canDeactivate guard to prevent users from accidentally navigating away from the NewTaskComponent when they have unsaved changes
 
-// using runGuardsAndResolvers: 'paramsOrQueryParamsChange' to ensure that the resolver re-runs when either route parameters or query parameters change
+// using runGuardsAndResolvers: 'always' to ensure that the resolver re-runs on every navigation to this route
