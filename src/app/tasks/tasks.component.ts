@@ -29,10 +29,10 @@ export class TasksComponent implements OnInit {
       .allTasks()
       .filter((task) => task.userId === this.userId())
       .sort((a, b) => {
-        if (this.order() === 'desc') {
-          return a.id > b.id ? -1 : 1;
+        if (this.order() === 'asc') {
+          return a.id > b.id ? 1 : 1;
         } else {
-          return a.id > b.id ? 1 : -1;
+          return a.id > b.id ? -1 : 1;
         }
       })
   );
