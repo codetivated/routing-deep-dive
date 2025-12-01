@@ -13,6 +13,9 @@ export const routes: Route[] = [
     path: 'users/:userId',
     component: UserTasksComponent,
     children: userRoutes,
+    data: {
+      message: 'Hello!',
+    },
   },
   { path: '**', component: NotFoundComponent },
 ];

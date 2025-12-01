@@ -17,3 +17,5 @@ export const appConfig: ApplicationConfig = {
 };
 
 // paramsInheritanceStrategy: 'always ensures that child routes inherit route parameters from parent routes
+
+// withComponentInputBinding: This enables automatic binding of route parameters to component inputs marked with the @Input decorator.

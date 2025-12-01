@@ -24,6 +24,7 @@ import {
 export class UserTasksComponent implements OnInit {
   userId = input.required<string>();
   userName = '';
+  message = input<string>();
   private usersService = inject(UsersService);
   private activatedRoute = inject(ActivatedRoute);
   destroyRef = inject(DestroyRef);
@@ -34,6 +35,8 @@ export class UserTasksComponent implements OnInit {
   // });
 
   ngOnInit(): void {
+    console.log('Input Data: ' + this.message());
+
     // Alternative way to get the route parameter using ActivatedRoute
     console.log(this.activatedRoute);
 
